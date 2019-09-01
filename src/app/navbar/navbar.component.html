@@ -1,0 +1,30 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar> <span>Dashboard</span></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="router-link-active"><i class="material-icons">
+          dashboard
+        </i>Dashboard</a>
+      <a mat-list-item [routerLink]="['/table']" routerLinkActive="router-link-active"><i class="material-icons">
+        list_alt
+        </i>Table</a>
+      <a mat-list-item [routerLink]="['/tree']" routerLinkActive="router-link-active"><i class="material-icons">
+        toc
+        </i>Tree</a>
+      <a mat-list-item [routerLink]="['/drag']" routerLinkActive="router-link-active"><i class="material-icons">
+        drag_indicator
+        </i>Drag & Drop</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Home</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
