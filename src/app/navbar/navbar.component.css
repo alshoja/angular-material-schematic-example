@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 .sidenav-container {
   height: 100%;
 }
@@ -6,9 +8,9 @@
   width: 200px;
 }
 
-.sidenav .mat-toolbar {
+/* .sidenav .mat-toolbar {
   background: inherit;
-}
+} */
 
 .mat-toolbar.mat-primary {
   position: sticky;
